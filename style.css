@@ -1,5 +1,6 @@
 nav {
     font-family: lato;
+    display: flex;
 }
 
 body {
@@ -52,6 +53,7 @@ section {
     border: 1px solid black;
     position: relative;
     min-height: 80vh;
+    margin-bottom: 5px;
 }
 
 
@@ -236,12 +238,11 @@ section.your-active-class .landing__container::after {
 }
 
 .navLinks {
+    display: flex;
     font-family: 'Fira Sans', sans-serif;
     font-weight: bold;
     color: black;
-    font-size: 25px;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 15px;
     cursor: pointer;
 }
 
@@ -249,6 +250,12 @@ section.your-active-class .landing__container::after {
     color: white;
     background: rgb(226, 94, 32);
     border-radius: 7px;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .activebtn {
@@ -265,24 +272,88 @@ section.your-active-class .landing__container::after {
     margin-left: 10px;
 }
 
-.scrollup {
-    width: 40px;
-    height: 40px;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 50px;
-    right: 100px;
+#myBtn {
     display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: red;
+    /* Set a background color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
 }
 
-@media only screen and (max-width: 600px) {
+#myBtn:hover {
+    background-color: #555;
+    /* Add a dark-grey background on hover */
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: black;
+    display: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        overflow-x: visible;
+    }
+    * {
+        box-sizing: border-box;
+    }
     .landing__container p {
         font-size: 20px;
     }
     section {
         min-height: 50vh;
     }
-    .navLinks {
-        font-size: 20px;
+    .navbar-nav {
+        position: absolute;
+        right: 0px;
+        height: 80vh;
+        top: 3.5vh;
+        background-color: rgb(253, 107, 39);
+        border-radius: 15px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
     }
+    .navbar-nav li {
+        opacity: 0;
+    }
+    .navbar-nav a {
+        color: white;
+    }
+    .burger div {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
 }
