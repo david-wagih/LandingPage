@@ -7,18 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Manipulating the DOM</title>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
     <header class="page__header" id="top">
         <nav class="navbar__menu navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul id="navbar__list" class="navbar-nav"></ul>
+            <ul id="navbar__list" class="navbar-nav"></ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
         </nav>
     </header>
@@ -66,7 +66,7 @@
                 </p>
             </div>
         </section>
-        <section id="section5" data-nav="Section 6">
+        <section id="section6" data-nav="Section 6">
             <div class="landing__container">
                 <h2>Section 6</h2>
                 <p>
@@ -74,13 +74,26 @@
                 </p>
             </div>
         </section>
+        <section id="section7" data-nav="Section 7">
+            <div class="landing__container">
+                <h2>Section 7</h2>
+                <p>
+                    My name is David Wagih Roshdy, I am a Full stack Web developer, writing front end with Html , CSS , JS and backend with Asp.Net C#.
+                </p>
+            </div>
+        </section>
+        <section id="section8" data-nav="Section 8">
+            <div class="landing__container">
+                <h2>Section 8</h2>
+                <p>
+                    My name is David Wagih Roshdy, I am a Full stack Web developer, writing front end with Html , CSS , JS and backend with Asp.Net C#.
+                </p>
+            </div>
+        </section>
     </main>
-    <a href="#" class="scrollup">
-        <img src="upwards-arrow.png" alt="" style="width: 40px; height: 40px" />
-    </a>
-    <script src="jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
-    <script src="bootstrap.bundle.min.js"></script>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      go to Top
+    </button>
+    <script src="js/script.js"></script>
 </body>
-
 </html>
