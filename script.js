@@ -95,29 +95,41 @@ scrollStop(function() {
 });
 
 // this part is for the return to top button we have created.
-$(document).ready(function() {
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 100) {
-            $(".scrollup").fadeIn();
-        } else {
-            $(".scrollup").fadeOut();
-        }
-    });
-    $(".scrollup").click(function() {
-        $("html, body").animate({
-                scrollTop: 0,
-            },
-            50
-        );
-        return false;
-    });
-});
 
-// this part is necessary to remove the activebtn class which is not needed in this link.
-const arrowUp = document.querySelector(".scrollup");
-arrowUp.addEventListener("click", () => {
-    arrowUp.classList.remove("activebtn");
-});
+//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 100px from the top of the document, show the button
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (
+        document.body.scrollTop > 100 ||
+        document.documentElement.scrollTop > 100
+    ) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+const navSlide = () => {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".navbar-nav");
+    const navLinks = document.querySelectorAll("navbar-nav li");
+    // toggle nav
+    burger.addEventListener("click", () => {
+        nav.classList.toggle("nav-active");
+    });
+};
+navSlide();
 
 // checking the performance of our Js Functions
 const t1 = performance.now();
