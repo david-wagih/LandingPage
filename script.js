@@ -7,9 +7,9 @@ const frag = document.createDocumentFragment();
 const sections = document.querySelectorAll("section");
 
 // Helper function to get siblings of an element
-var getSiblings = function(link) {
-    var siblings = [];
-    var sibling = link.parentNode.firstChild;
+let getSiblings = function(link) {
+    let siblings = [];
+    let sibling = link.parentNode.firstChild;
     while (sibling) {
         if (sibling.nodeType === 1 && sibling !== link) {
             siblings.push(sibling);
